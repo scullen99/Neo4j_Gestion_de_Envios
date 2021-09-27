@@ -1,0 +1,326 @@
+// BBDD Neo4j Sergio Esteban Tarrero
+
+//------------------------------------------------------------------------------
+// Creación ciudades
+//------------------------------------------------------------------------------
+
+// Crear Barcelona
+CREATE (c:Ciudad {name:'Barcelona'})
+RETURN c
+
+// Crear Cadiz
+CREATE (c:Ciudad {name:'Cadiz'})
+RETURN c
+
+// Crear Formentera
+CREATE (c:Ciudad {name:'Formentera'})
+RETURN c
+
+// Crear Lugo
+CREATE (c:Ciudad {name:'Lugo'})
+RETURN c
+
+// Crear Madrid
+CREATE (c:Ciudad {name:'Madrid'})
+RETURN c
+
+// Crear Tenerife
+CREATE (c:Ciudad {name:'Tenerife'})
+RETURN c
+
+// Crear Valencia
+CREATE (c:Ciudad {name:'Valencia'})
+RETURN c
+
+// Crear Valladolid
+CREATE (c:Ciudad {name:'Valladolid'})
+RETURN c
+
+//------------------------------------------------------------------------------
+// Creación Nodos Intermedios
+//------------------------------------------------------------------------------
+
+// Crear Amazon-Cuenca
+CREATE (a:Almacen {name:'Amazon-Cuenca'})
+RETURN a
+
+// Crear Correos-Zaragoza
+CREATE (a:Almacen {name:'Correos-Zaragoza'})
+RETURN a
+
+// Crear MRW-Segovia
+CREATE (a:Almacen {name:'MRW-Segovia'})
+RETURN a
+
+// Crear Nacex-Zamora
+CREATE (a:Almacen {name:'Nacex-Zamora'})
+RETURN a
+
+// Crear Seur-Cordoba
+CREATE (a:Almacen {name:'Seur-Cordoba'})
+RETURN a
+
+//------------------------------------------------------------------------------
+// Creación Relaciones
+//------------------------------------------------------------------------------
+
+//Relacion Amazon-Cuenca-Valencia
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valencia" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Coche {tiempo:7800, precio:2,vehiculo:"Coche" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valencia" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Ferrocarril {tiempo:7200, precio:(1.6),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valencia" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Avion {tiempo:6000, precio:7,vehiculo:"Avion" }]->(b)
+RETURN r
+
+
+//Relacion Barcelona-Madrid 
+//AVION
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Barcelona" AND b.name = "Madrid"
+CREATE (a)-[r:Avion {tiempo:18900, precio:(22.05), vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Barcelona" AND b.name = "Madrid"
+CREATE (a)-[r:Coche {tiempo:24570, precio:(6.3), vehiculo:"Coche"}]->(b)
+RETURN r
+
+
+//Relacion Cadiz-Amazon-Cuenca
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Cadiz" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Ferrocarril {tiempo:25200, precio:(5.6),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Cadiz" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Coche {tiempo:27300, precio:7,vehiculo:"Coche" }]->(b)
+RETURN r
+
+//Relacion Cadiz-Tenerife
+//AVION
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Cadiz" AND b.name = "Tenerife"
+CREATE (a)-[r:Avion {tiempo:12000, precio:56,vehiculo:"Avion" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Cadiz" AND b.name = "Tenerife"
+CREATE (a)-[r:Ferrocarril {tiempo:57600, precio:16,vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//BARCO
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Cadiz" AND b.name = "Tenerife"
+CREATE (a)-[r:Barco {tiempo:116400, precio:(4.8),vehiculo:"Barco" }]->(b)
+RETURN r
+
+//Relacion Correos-Zaragoza-Barcelona
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Barcelona" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Ferrocarril {tiempo:9600, precio:(2.4),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Barcelona" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Coche {tiempo:11000, precio:3,vehiculo:"Coche" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Barcelona" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Avion {tiempo:4200, precio:(10.5),vehiculo:"Avion" }]->(b)
+RETURN r  
+
+//Relacion Formentera-Barcelona
+//AVION
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Barcelona" AND b.name = "Formentera"
+CREATE (a)-[r:Avion {tiempo:5940, precio:(20.65),vehiculo:"Avion" }]->(b)
+RETURN r
+//BARCO
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Barcelona" AND b.name = "Formentera"
+CREATE (a)-[r:Barco {tiempo:43680, precio:(1.77),vehiculo:"Barco" }]->(b)
+RETURN r
+
+//Relacion Madrid-Amazon-Cuenca
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Coche {tiempo:6630, precio:(1.7),vehiculo:"Coche" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Ferrocarril {tiempo:6120, precio:(1.36),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Amazon-Cuenca"
+CREATE (a)-[r:Avion {tiempo:5100, precio:(5.95),vehiculo:"Avion" }]->(b)
+RETURN r
+
+//Relacion Madrid-Correos-Zaragoza
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Avion {tiempo:4200, precio:(10.5),vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Coche {tiempo:11000, precio:3,vehiculo:"Coche" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Correos-Zaragoza"
+CREATE (a)-[r:Ferrocarril {tiempo:9600, precio:(2.4),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+
+//Relacion Madrid-MRW-Segovia
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Ferrocarril {tiempo:3600, precio:(0.8),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Avion {tiempo:3000, precio:(3.5),vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Coche {tiempo:3900, precio:1,vehiculo:"Coche" }]->(b)
+RETURN r
+
+//Relacion Madrid-Seur-Cordoba
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Coche {tiempo:15600, precio:4,vehiculo:"Coche" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Avion {tiempo:12000, precio:14,vehiculo:"Avion" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Madrid" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Ferrocarril {tiempo:14400, precio:(3.2),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+
+//Relacion MRW-Segovia-Valladolid
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Ferrocarril {tiempo:5400, precio:(1.2),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Avion {tiempo:4500, precio:(5.25),vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "MRW-Segovia"
+CREATE (a)-[r:Coche {tiempo:5850, precio:(1.5),vehiculo:"Coche" }]->(b)
+RETURN r
+
+//Relacion Nacex-Zamora-Barcelona
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Barcelona" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Ferrocarril {tiempo:28800, precio:(6.4),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Barcelona" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Avion {tiempo:24000, precio:28,vehiculo:"Avion" }]->(b)
+RETURN r
+
+//Relacion Nacex-Zamora-Lugo
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Lugo" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Avion {tiempo:9000, precio:(10.5),vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Lugo" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Coche {tiempo:11700, precio:3,vehiculo:"Coche" }]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Lugo" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Ferrocarril {tiempo:10800, precio:(2.4),vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+
+//Relacion Seur-Cordoba-Cadiz
+//FERRROCARIL
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Cadiz" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Ferrocarril {tiempo:9000, precio:2,vehiculo:"Ferrocarril" }]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Cadiz" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Avion {tiempo:7500, precio:(8.75),vehiculo:"Avion" }]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Cadiz" AND b.name = "Seur-Cordoba"
+CREATE (a)-[r:Coche {tiempo:9750, precio:(2.5),vehiculo:"Coche" }]->(b)
+RETURN r
+
+//Relacion Tenerife-Madrid
+//AVION
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Tenerife" AND b.name = "Madrid"
+CREATE (a)-[r:Avion {tiempo:14400, precio:70, vehiculo:"Avion"}]->(b)
+RETURN r
+//BARCO
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Tenerife" AND b.name = "Madrid"
+CREATE (a)-[r:Barco {tiempo:145200, precio:6, vehiculo:"Barco"}]->(b)
+RETURN r
+
+//Relacion Valencia-Formentera
+//BARCO
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Valencia" AND b.name = "Formentera"
+CREATE (a)-[r:Barco {tiempo:17760, precio:(0.69), vehiculo:"Barco"}]->(b)
+RETURN r
+//AVION
+MATCH (a:Ciudad), (b:Ciudad)
+WHERE a.name = "Valencia" AND b.name = "Formentera"
+CREATE (a)-[r:Avion {tiempo:3780, precio:(8.05), vehiculo:"Avion"}]->(b)
+RETURN r
+
+//Relacion Valladolid-Nacex-Zamora
+//AVION
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Avion {tiempo:3000, precio:(3.5), vehiculo:"Avion"}]->(b)
+RETURN r
+//Ferrocarril
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Ferrocarril {tiempo:3600, precio:(0.8), vehiculo:"Ferrocarril"}]->(b)
+RETURN r
+//COCHE
+MATCH (a:Ciudad), (b:Almacen)
+WHERE a.name = "Valladolid" AND b.name = "Nacex-Zamora"
+CREATE (a)-[r:Coche {tiempo:3900, precio:1, vehiculo:"Coche"}]->(b)
+RETURN r
