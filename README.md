@@ -1,2 +1,2 @@
-# Neo4j_Gestion_de_Envios
+# Neo4j Gestion De Envíos
 Proyecto de simulación de envíos en Neo4j con Python
