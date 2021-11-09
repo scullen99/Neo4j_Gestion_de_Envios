@@ -12,7 +12,7 @@ class Shipments(object):
         self.neo_connection = neo_driver.session()
 
     def shipping_manage(self, shipment_method, product, start_city, destination_city):
-        # product pensabamos hacer algo con el pero al final no :D
+        
         resp = self.neo_connection.run('MATCH (n:Ciudad) WHERE n.name="'+start_city+'" or n.name="'+destination_city+'" RETURN n')
         data = resp.data()
         l = len(data)
