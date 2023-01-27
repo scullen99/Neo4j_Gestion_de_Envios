@@ -13,6 +13,10 @@ The company has three types of parcel services:
 
 The objective of the system is to maximise the company's profits by finding the most economical route possible within the set time constraints. The system also handles fleet management, associating shipments with the right vehicle to cover a specific route. The project includes the design and implementation of an API and a file to initialise the database.
 
+The company uses different means of transport to carry out the routes. Below is a table with the different transport times and the associated times and costs.
+
+![prices](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/prices.png)
+
 ## Explicación del proyecto:
 Este proyecto es un sistema de gestión logística para una plataforma de ventas en línea. Utiliza la base de datos Neo4j para almacenar información sobre los distintos almacenes, puntos de entrega, plataformas intermedias, tiempos y costos de transporte entre diferentes puntos, y rutas óptimas entre un punto de envío y otro punto de entrega. 
 
@@ -22,3 +26,7 @@ La empresa tiene tres tipos de servicios de paquetería:
 * Envío económico
 
 El objetivo del sistema es maximizar los beneficios de la empresa al encontrar la ruta más económica posible dentro de las restricciones de tiempo establecidas. El sistema también maneja la gestión de flota, asociando los envíos con el vehículo adecuado para cubrir un trayecto específico. El proyecto incluye el diseño e implementación de una API y un fichero para inicializar la base de datos.
+
+Para realizar las rutas la empresa dispone de diferentes medios de transporte. A continuación, se muestra una tabla con los distintos tiempos de transporte y los tiempos y costes asociados.
+
+![precios](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/precios.png)
