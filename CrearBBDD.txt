@@ -1,4 +1,4 @@
-// BBDD Neo4j Sergio Esteban Tarrero
+// Comandos para crear la BBDD dentro de Neo4j con Cypher
 
 //------------------------------------------------------------------------------
 // Creación ciudades
