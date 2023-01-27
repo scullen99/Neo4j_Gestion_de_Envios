@@ -9,7 +9,7 @@ This project is a logistics management system for an online sales platform. It u
 The company has three types of parcel services: 
 * Same-day delivery
 * Next day delivery
-* Budget delivery. 
+* Budget delivery
 
 The objective of the system is to maximise the company's profits by finding the most economical route possible within the set time constraints. The system also handles fleet management, associating shipments with the right vehicle to cover a specific route. The project includes the design and implementation of an API and a file to initialise the database.
 
@@ -19,6 +19,6 @@ Este proyecto es un sistema de gestión logística para una plataforma de ventas
 La empresa tiene tres tipos de servicios de paquetería: 
 * Entrega en el mismo día
 * Entrega al día siguiente de la comra
-* Envío económico. 
+* Envío económico
 
 El objetivo del sistema es maximizar los beneficios de la empresa al encontrar la ruta más económica posible dentro de las restricciones de tiempo establecidas. El sistema también maneja la gestión de flota, asociando los envíos con el vehículo adecuado para cubrir un trayecto específico. El proyecto incluye el diseño e implementación de una API y un fichero para inicializar la base de datos.
