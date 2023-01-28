@@ -30,3 +30,12 @@ El objetivo del sistema es maximizar los beneficios de la empresa al encontrar l
 Para realizar las rutas la empresa dispone de diferentes medios de transporte. A continuación, se muestra una tabla con los distintos tiempos de transporte y los tiempos y costes asociados.
 
 ![precios](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/precios.png)
+
+## Crear nodos principales:
+![Crear nodos principales](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph3.png)
+
+## Crear nodos intermedios:
+![Crear nodos intermedios](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph2.png)
+
+## Ver todos los nodos
+![Ver todos los nodos](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph.png)
