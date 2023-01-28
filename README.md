@@ -17,6 +17,15 @@ The company uses different means of transport to carry out the routes. Below is 
 
 ![prices](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/prices.png)
 
+## Create main nodes:
+![Create main nodes](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph3.png)
+
+## Create intermediate nodes:
+![Create intermediate nodes](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph2.png)
+
+## View all nodes
+![View all nodes](https://github.com/scullen99/Neo4j_Shipment_Management/blob/main/graph.png)
+
 ## Explicación del proyecto:
 Este proyecto es un sistema de gestión logística para una plataforma de ventas en línea. Utiliza la base de datos Neo4j para almacenar información sobre los distintos almacenes, puntos de entrega, plataformas intermedias, tiempos y costos de transporte entre diferentes puntos, y rutas óptimas entre un punto de envío y otro punto de entrega. 
 
